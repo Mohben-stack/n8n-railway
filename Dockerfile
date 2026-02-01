@@ -1,12 +1,13 @@
 FROM n8nio/n8n:latest
 
-# Instalar dependências extras se necessário
+# Instalar dependências extras (imagem n8n atual é Debian-based; usa apt-get)
 USER root
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
-    py3-pip \
+    python3-pip \
     git \
-    curl
+    curl \
+    && rm -rf /var/lib/apt/lists/*
 
 USER node
 
