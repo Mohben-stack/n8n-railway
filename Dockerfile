@@ -1,4 +1,4 @@
-FROM n8nio/n8n:1.94.1
+FROM n8nio/n8n:latest
 
 # Imagem oficial n8n é mínima (sem apk/apt-get) - usar como está
 # Configurar timezone
